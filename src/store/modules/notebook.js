@@ -76,10 +76,15 @@ const actions = {
   },
 
   deleteNotebook({ commit }, payload) {
-    return Notebook.deleteNotebook(payload.notebookId).then(res => {
-      commit("deleteNotebook", { notebookId: payload.notebookId });
-      Message.success(res.msg);
-    });
+    return Notebook.deleteNotebook(payload.notebookId).then(
+      res => {
+        commit("deleteNotebook", { notebookId: payload.notebookId });
+        Message.success(res.msg);
+      },
+      err => {
+        Message.error(err.msg);
+      }
+    );
   }
 };
 
