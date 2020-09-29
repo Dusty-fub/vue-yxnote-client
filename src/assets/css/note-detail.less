@@ -1,0 +1,77 @@
+.note-detail {
+  flex : 1;
+  display : flex;
+  flex-direction : column;
+
+  .note-detail-ct {
+    height : 100%;
+
+    .note-bar {
+      padding : 11.5px 20px;
+      border-bottom : 1px solid #EEEEEE;
+      background-color : #FFFFFF;
+      &:after {
+        content : '';
+        display : block;
+        clear : both;
+      }
+      span {
+        font-size : 16px;
+        color : #999999;
+        margin-right : 4px;
+      }
+      .iconfont {
+        float : right;
+        margin-left : 4px;
+        font-size : 18px;
+        cursor : pointer;
+      }
+    }
+  }
+  .note-title {
+    input, span {
+      display : inline-block;
+      width : 100%;
+      border : none;
+      outline : none;
+      font-weight : 400;
+      font-size : 20px;
+      padding : 10px 10px;
+    }
+    span {
+      margin-top : 30px;
+    }
+  }
+  .editor {
+    height : 100%;
+    max-height : ~"calc(100% - 88px)";
+    overflow : auto;
+    position : relative;
+    width : 100%;
+
+    textarea, .preview {
+      position : absolute;
+      height : 100%;
+      width : 100%;
+      padding : 15px 33px;
+    }
+    textarea {
+      border : none;
+      resize : none;
+      outline : none;
+      font-size : 14px;
+      font-family : 'Monaco', courier, monospace;
+    }
+    .preview {
+      margin-top : 20px;
+      max-height : ~"calc(100% - 30px)";
+      overflow : auto;
+    }
+  }
+  .note-empty {
+    font-size : 30px;
+    color : #CCCCCC;
+    text-align : center;
+    margin-top : 100px;
+  }
+}

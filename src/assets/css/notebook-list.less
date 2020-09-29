@@ -1,0 +1,93 @@
+#notebook-list {
+  flex : 1;
+  background-color : #EEEEEE;
+  min-width : 920px;
+
+  header {
+    padding : 12px;
+    border-bottom : 1px solid #CCCCCC;
+
+    .btn {
+      font-size : 15px;
+      color : #FFFFFF;
+      cursor : pointer;
+      margin-left : 10px;
+      border-radius : 5px;
+      padding : 2px 4px;
+      background-color : #448AFF;
+      &:hover {
+        opacity : .8;
+      }
+    }
+  }
+
+  main {
+    padding : 30px 40px;
+    height : ~"calc(100% - 49px)";
+
+    .layout {
+      max-width : 966px;
+      margin : 0 auto;
+      height : 100%;
+
+      h2 {
+        font-weight : normal;
+        color : #000000;
+        text-align : center;
+      }
+      .book-list {
+        margin-top : 10px;
+        font-size : 14px;
+        color : #666666;
+        background-color : #FFFFFF;
+        font-weight : bold;
+        max-height : ~"calc(100% - 52px)";
+        overflow : auto;
+
+        &::-webkit-scrollbar {
+          width : 7px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          width : 7px;
+          border-radius : 4px;
+          background : #E2E1E4;
+        }
+
+        .notebook {
+          display : block;
+          cursor : pointer;
+          div {
+            border-radius : 5px;
+            border : 1px solid #EBEBEB;
+            padding : 12px 14px;
+            margin : 4px;
+            height : 60px;
+
+            span {
+              font-size : 12px;
+              font-weight : normal;
+              line-height : 33px;
+              color : #B3C0C8;
+            }
+
+            .date, .action {
+              float : right;
+              margin-left : 10px;
+            }
+            & span:nth-child(3):hover {
+              color : blue;
+            }
+
+            & span:nth-child(2):hover {
+              color : red;
+            }
+          }
+          &:hover {
+            background-color : #F7FAFD;
+          }
+        }
+      }
+    }
+  }
+}

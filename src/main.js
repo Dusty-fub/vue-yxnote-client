@@ -1,12 +1,19 @@
-import Vue from 'vue'
-import App from './App'
-import router from './router'
+import Vue from "vue";
+import ElementUI from "element-ui";
 
-Vue.config.productionTip = false
+import "../theme/index.css";
+import App from "./App";
+import router from "./router";
+import store from "./store";
 
-new Vue({
-  el: '#app',
+Vue.use(ElementUI);
+
+Vue.config.productionTip = false;
+
+window.vm = new Vue({
+  el: "#app",
   router,
+  store,
   components: { App },
-  template: '<App/>'
-})
+  template: "<App/>"
+});

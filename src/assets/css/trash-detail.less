@@ -1,0 +1,88 @@
+.note-detail {
+  flex : 1;
+  display : flex;
+  flex-direction : column;
+
+  .note-bar {
+    border-bottom : 1px solid #EEEEEE;
+    background-color : #FFFFFF;
+    padding : 4px 20px;
+    span {
+      font-size : 16px;
+      color : #999999;
+      line-height : 36px;
+      margin-right : 4px;
+    }
+    .action {
+      float : right;
+      margin : 6px;
+      margin-bottom : 0;
+      padding : 2px 4px;
+      font-size : 18px;
+      border-radius : 5px;
+    }
+  }
+
+  .note-title {
+    span {
+      display : inline-block;
+      width : 100%;
+      border : none;
+      outline : none;
+      font-weight : 400;
+      font-size : 20px;
+      padding : 10px 10px;
+      margin-top : 30px;
+    }
+  }
+  .editor {
+    height : 100%;
+    position : relative;
+    width : 100%;
+  }
+
+  .preview {
+    position : absolute;
+    height : 100%;
+    width : 100%;
+    padding : 20px;
+    margin-top : 20px;
+    max-height : ~"calc(100% - 30px)";
+    overflow : auto;
+
+    &::-webkit-scrollbar {
+      width : 0px;
+    }
+  }
+}
+
+.note-empty {
+  width : 100%;
+  font-size : 30px;
+  color : #CCCCCC;
+  text-align : center;
+  margin-top : 100px;
+}
+
+@media (max-width: 1090px) {
+  .action {
+    clear : right;
+  }
+  .note-bar {
+    height : 79px;
+  }
+  .note-bar a:nth-child(6) {
+    position : relative;
+    top : 31px;
+  }
+  .note-bar a:nth-child(7) {
+    position : relative;
+    right : 80px;
+    top : -5px;
+  }
+  .note-bar a:nth-child(8) {
+    position : relative;
+    right : 198px;
+    top : -40px;
+  }
+}
