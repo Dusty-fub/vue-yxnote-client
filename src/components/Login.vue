@@ -59,6 +59,7 @@ export default {
   created() {
     this.checkLogin();
   },
+
   data() {
     return {
       isShowLogin: true,
@@ -138,7 +139,8 @@ export default {
         .then(() => {
           this.login.isError = false;
           this.login.notice = "";
-          this.$router.push({ path: "notebooks" });
+
+          this.$router.replace({ path: "notebooks" });
         })
         .catch((data) => {
           this.login.isError = true;
@@ -149,104 +151,102 @@ export default {
 };
 </script>
 
-
-
-<style lang="less"  scoped>
+<style lang="less" scoped>
 .modal-mask {
-  position : fixed;
-  z-index : 100;
-  top : 0;
-  left : 0;
-  width : 100%;
-  height : 100%;
-  background-color : rgba(0, 0, 0, .7);
-  display : table;
-  transition : opacity .3s ease;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: table;
+  transition: opacity 0.3s ease;
 }
 .modal-wrapper {
-  display : table-cell;
-  vertical-align : middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 .modal-container {
-  width : 800px;
-  height : 500px;
-  margin : 0px auto;
-  background-color : #FFFFFF;
-  border-radius : 2px;
-  box-shadow : 0 2px 8px rgba(0, 0, 0, .33);
-  transition : all .3s ease;
-  font-family : Helvetica, Arial, sans-serif;
-  display : flex;
+  width: 800px;
+  height: 500px;
+  margin: 0px auto;
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
   .main {
-    flex : 1;
-    background : #36BC64
-    url(//cloud.hunger-valley.com/17-12-13/38476998.jpg-middle) center center
-    no-repeat;
-    background-size : contain;
+    flex: 1;
+    background: #36bc64
+      url(//cloud.hunger-valley.com/17-12-13/38476998.jpg-middle) center center
+      no-repeat;
+    background-size: contain;
   }
   .form {
-    width : 270px;
-    border-left : 1px solid #CCCCCC;
-    overflow : hidden;
+    width: 270px;
+    border-left: 1px solid #cccccc;
+    overflow: hidden;
     h3 {
-      padding : 10px 20px;
-      margin-top : -1px;
-      font-weight : normal;
-      font-size : 16px;
-      border-top : 1px solid #EEEEEE;
-      cursor : pointer;
+      padding: 10px 20px;
+      margin-top: -1px;
+      font-weight: normal;
+      font-size: 16px;
+      border-top: 1px solid #eeeeee;
+      cursor: pointer;
       &:nth-of-type(2) {
-        border-bottom : 1px solid #EEEEEE;
+        border-bottom: 1px solid #eeeeee;
       }
     }
     .button {
-      background-color : #2BB964;
-      height : 36px;
-      line-height : 36px;
-      text-align : center;
-      font-weight : bold;
-      color : #FFFFFF;
-      border-radius : 4px;
-      margin-top : 18px;
-      cursor : pointer;
+      background-color: #2bb964;
+      height: 36px;
+      line-height: 36px;
+      text-align: center;
+      font-weight: bold;
+      color: #ffffff;
+      border-radius: 4px;
+      margin-top: 18px;
+      cursor: pointer;
     }
-    .login, .register {
-      padding : 0px 20px;
-      border-top : 1px solid #EEEEEE;
-      height : 0;
-      overflow : hidden;
-      transition : height .4s;
+    .login,
+    .register {
+      padding: 0px 20px;
+      border-top: 1px solid #eeeeee;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.4s;
       &.show {
-        height : 193px;
+        height: 193px;
       }
       input {
-        display : block;
-        width : 100%;
-        height : 35px;
-        line-height : 35px;
-        padding : 0 6px;
-        border-radius : 4px;
-        border : 1px solid #CCCCCC;
-        outline : none;
-        font-size : 14px;
-        margin-top : 10px;
+        display: block;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        padding: 0 6px;
+        border-radius: 4px;
+        border: 1px solid #cccccc;
+        outline: none;
+        font-size: 14px;
+        margin-top: 10px;
       }
       input:focus {
-        border : 3px solid #9DCAF8;
+        border: 3px solid #9dcaf8;
       }
       p {
-        font-size : 12px;
-        margin-top : 10px;
-        color : #444444;
+        font-size: 12px;
+        margin-top: 10px;
+        color: #444444;
       }
       .error {
-        color : red;
+        color: red;
       }
     }
     .login {
-      border-top : 0;
+      border-top: 0;
     }
   }
 }
-
 </style>

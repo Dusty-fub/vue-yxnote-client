@@ -33,13 +33,15 @@
 <script>
 import { friendlyDate } from "@/helpers/util";
 import { mapState, mapActions, mapGetters } from "vuex";
-
 export default {
   created() {
     this.checkLogin();
     this.getNotebooks();
   },
-
+  beforeRouteEnter(to, from, next) {
+    // if (from.fullPath === "/login") location.reload();
+    next();
+  },
   computed: {
     ...mapGetters(["notebooks"]),
   },

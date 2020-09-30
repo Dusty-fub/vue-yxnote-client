@@ -42,6 +42,9 @@ const mutations = {
 
   setCurBook(state, payload) {
     state.curBookId = payload.curBookId;
+  },
+  clearNotebooks(state) {
+    state.notebooks = null;
   }
 };
 

@@ -1,4 +1,3 @@
-import axios from "axios";
 import baseURLConfig from "./config-baseURL";
 import { Message } from "element-ui";
 

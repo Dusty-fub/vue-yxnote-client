@@ -20,7 +20,7 @@
 
 <script>
 import avatar from "@/components/Avatar.vue";
-import { mapActions } from "vuex";
+import { mapActions, mapMutations } from "vuex";
 
 export default {
   components: {
@@ -29,8 +29,9 @@ export default {
 
   methods: {
     ...mapActions(["logout"]),
-
+    ...mapMutations(["clearNotebooks"]),
     onLogout() {
+      this.clearNotebooks();
       this.logout({ path: "/login" });
     },
   },
@@ -40,32 +41,31 @@ export default {
 
 <style lang="less" scoped>
 #sidebar {
-  position : relative;
-  width : 56px;
-  text-align : center;
-  background-color : #272F40;
+  position: relative;
+  width: 56px;
+  text-align: center;
+  background-color: #272f40;
 }
 .icons {
-  margin-top : 15px;
+  margin-top: 15px;
 
   a {
-    padding : 6px 0;
-    display : block;
+    padding: 6px 0;
+    display: block;
   }
 
   .router-link-active {
-    background-color : #5E6266;
+    background-color: #5e6266;
   }
 }
 .logout {
-  position : absolute;
-  bottom : 20px;
-  width : 100%;
-  text-align : center;
-  cursor : pointer;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
 }
 .iconfont {
-  color : #FFFFFF;
+  color: #ffffff;
 }
-
 </style>
